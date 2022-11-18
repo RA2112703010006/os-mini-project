@@ -1,0 +1,22 @@
+1.	#include<stdio.h>  
+2.	#include<stdlib.h>  
+3.	int main(){  
+4.	  int n,i,*ptr,sum=0;    
+5.	    printf("Enter number of elements: ");    
+6.	    scanf("%d",&n);    
+7.	    ptr=(int*)malloc(n*sizeof(int));  //memory allocated using malloc    
+8.	    if(ptr==NULL)                         
+9.	    {    
+10.	        printf("Sorry! unable to allocate memory");    
+11.	        exit(0);    
+12.	    }    
+13.	    printf("Enter elements of array: ");    
+14.	    for(i=0;i<n;++i)    
+15.	    {    
+16.	        scanf("%d",ptr+i);    
+17.	        sum+=*(ptr+i);    
+18.	    }    
+19.	    printf("Sum=%d",sum);    
+20.	    free(ptr);     
+21.	return 0;  
+22.	}    
